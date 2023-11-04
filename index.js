@@ -7,6 +7,9 @@ const authRoute = require("./routes/auth.js");
 
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 mongoose
   .connect("mongodb://127.0.0.1:27017/ecom", {
     useNewUrlParser: true,
