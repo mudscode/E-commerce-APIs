@@ -6,6 +6,7 @@ const app = express();
 const authRoute = require("./routes/auth.js");
 const userRoute = require("./routes/user.js");
 const productRoute = require("./routes/product.js");
+const cartRoute = require("./routes/cart.js");
 
 app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
@@ -26,6 +27,7 @@ mongoose
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
+app.use("/api/cart", cartRoute);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
