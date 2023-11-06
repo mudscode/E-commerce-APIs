@@ -19,7 +19,7 @@ router.post("/register", async (req, res) => {
     });
     const savedUser = await newUser.save();
     const { pass, ...others } = savedUser._doc;
-    res.status(200).json({...others, password: undefined});
+    res.status(200).json({ ...others, password: undefined });
   } catch (error) {
     res.status(500).json(error);
   }
@@ -47,7 +47,7 @@ router.post("/login", async (req, res) => {
       }
     );
     const { password, ...others } = user.toObject();
-    return res.status(200).json({...others, token});
+    return res.status(200).json({ ...others, token });
   } catch (error) {
     res.status(500).json(error);
   }
